@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.RadialGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="603.0" prefWidth="904.0" style="-fx-background-radius: 10px; -fx-background-color: whtie;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.LoginController">
+   <children>
+      <ImageView fitHeight="412.0" fitWidth="452.0" layoutY="65.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../webfiles/Saved%20Pictures/lovedesign.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="159.0" fitWidth="89.0" layoutX="394.0" layoutY="60.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../webfiles/Saved%20Pictures/dentbg.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="417.0" layoutY="96.0" style="-fx-background-position: cneter;" text="WE`DENS">
+         <font>
+            <Font name="System Bold" size="10.0" />
+         </font>
+         <textFill>
+            <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.9372549057006836" green="0.9372549057006836" blue="0.9372549057006836" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.7317073170731707">
+                     <color>
+                        <Color red="0.9372549057006836" green="0.9372549057006836" blue="0.9372549057006836" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.9372549057006836" green="0.9372549057006836" blue="0.9372549057006836" />
+                     </color>
+                  </Stop>
+               </stops>
+            </RadialGradient>
+         </textFill>
+      </Label>
+      <Label layoutX="340.0" layoutY="210.0" text="username:">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="341.0" layoutY="264.0" text="password:">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <TextField fx:id="userField" layoutX="423.0" layoutY="205.0" prefHeight="34.0" prefWidth="198.0" promptText="username" style="-fx-background-radius: 15px;" />
+      <Label layoutX="462.0" layoutY="346.0" text="Not a user?">
+         <font>
+            <Font size="12.0" />
+         </font>
+      </Label>
+      <Button fx:id="signUpBtn" layoutX="523.0" layoutY="341.0" mnemonicParsing="false" style="-fx-background-color: transparent; -fx-text-fill: blue;" text="Sign up!" underline="true">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <font>
+            <Font name="System Bold" size="12.800000190734863" />
+         </font>
+      </Button>
+      <Button layoutX="440.0" layoutY="309.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="150.0" style="-fx-background-radius: 10px; -fx-background-color: blue; -fx-text-fill: white;" text="Login">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="16.0" />
+         </font>
+      </Button>
+      <PasswordField layoutX="423.0" layoutY="259.0" prefHeight="34.0" prefWidth="198.0" promptText="password" style="-fx-background-radius: 15px;" />
+   </children>
+</AnchorPane>
