@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
@@ -11,47 +12,61 @@
 <?import javafx.scene.text.Font?>
 
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="562.0" prefWidth="860.0" style="-fx-background-color: transparent;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="585.0" prefWidth="896.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.LoginController">
    <children>
-      <ImageView fitHeight="407.0" fitWidth="409.0" layoutY="65.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="417.0" fitWidth="383.0" layoutX="14.0" layoutY="91.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../Pictures/Saved%20Photos/favorite.png" />
+            <Image url="@webfields/Saved%20Photos/favorite.png" />
          </image>
       </ImageView>
-      <Pane layoutX="187.0" layoutY="57.0" prefHeight="358.0" prefWidth="582.0" style="-fx-border-color: #ccc;">
+      <Pane layoutX="209.0" layoutY="91.0" prefHeight="338.0" prefWidth="549.0" style="-fx-border-color: #ccc;">
          <children>
-            <ImageView fitHeight="106.0" fitWidth="150.0" layoutX="188.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="94.0" fitWidth="134.0" layoutX="202.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../../Pictures/Saved%20Photos/logo2.png" />
+                  <Image url="@webfields/Saved%20Photos/logo2.png" />
                </image>
             </ImageView>
-            <Label layoutX="214.0" layoutY="44.0" style="-fx-text-fill: white;" text="WE`DENS">
-               <font>
-                  <Font name="Arial Rounded MT Bold" size="12.800000190734863" />
-               </font>
-            </Label>
-            <Label layoutX="136.0" layoutY="138.0" text="username:">
-               <font>
-                  <Font name="Arial Rounded MT Bold" size="14.0" />
-               </font>
-            </Label>
-            <Label layoutX="136.0" layoutY="191.0" text="password:">
-               <font>
-                  <Font name="Arial Rounded MT Bold" size="14.0" />
-               </font>
-            </Label>
-            <TextField layoutX="212.0" layoutY="130.0" prefHeight="33.0" prefWidth="213.0" promptText="username" style="-fx-background-radius: 10px;" />
-            <PasswordField layoutX="214.0" layoutY="186.0" prefHeight="33.0" prefWidth="213.0" promptText="password" style="-fx-background-radius: 10px;" />
-            <Button layoutX="247.0" layoutY="245.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="136.0" style="-fx-background-color: blue; -fx-text-fill: white; -fx-cursor: hand;" text="Login">
-               <font>
-                  <Font name="System Bold" size="14.0" />
-               </font>
-            </Button>
-            <Label layoutX="264.0" layoutY="282.0" text="Not a usr?" />
-            <Button layoutX="321.0" layoutY="278.0" mnemonicParsing="false" style="-fx-background-color: transparent; -fx-text-fill: blue; -fx-cursor: hand;" text="Sign Up!" underline="true">
+            <Label layoutX="220.0" layoutY="38.0" style="-fx-text-fill: white;" text="WE`DENS">
                <font>
                   <Font name="System Bold" size="12.800000190734863" />
                </font>
+            </Label>
+            <Label layoutX="134.0" layoutY="122.0" text="username:">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="134.0" layoutY="184.0" text="password:">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="userFieldLogin" layoutX="212.0" layoutY="111.0" prefHeight="38.0" prefWidth="202.0" promptText="Enter your usrname" style="-fx-background-radius: 10px;">
+               <font>
+                  <Font size="12.0" />
+               </font>
+            </TextField>
+            <PasswordField fx:id="pwdFieldLogin" layoutX="212.0" layoutY="169.0" prefHeight="38.0" prefWidth="202.0" promptText="Fill in your password" style="-fx-background-radius: 10px;">
+               <font>
+                  <Font size="12.0" />
+               </font>
+            </PasswordField>
+            <Button fx:id="loginBtn" layoutX="231.0" layoutY="228.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="151.0" style="-fx-background-color: blue; -fx-background-radius: 10px; -fx-text-fill: white;" text="Login">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Label layoutX="245.0" layoutY="263.0" text="Not a user?" />
+            <Button fx:id="signUpBtn" layoutX="309.0" layoutY="258.0" mnemonicParsing="false" style="-fx-background-color: transparent; -fx-text-fill: blue;" text="Sign-up!" underline="true">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
             </Button>
          </children>
       </Pane>
