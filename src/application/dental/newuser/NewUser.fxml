@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="610.0" prefWidth="898.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.dental.newuser.NewUser">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="610.0" prefWidth="898.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.dental.newuser.NewUserController">
    <children>
       <ImageView fitHeight="86.0" fitWidth="82.0" layoutX="114.0" layoutY="21.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -44,22 +44,22 @@
                   <Font name="System Bold" size="18.0" />
                </font>
             </Label>
-            <TextField layoutX="89.0" layoutY="56.0" prefHeight="35.0" prefWidth="265.0" promptText="username" style="-fx-background-radius: 15px;" />
-            <TextField layoutX="89.0" layoutY="105.0" prefHeight="35.0" prefWidth="265.0" promptText="email" style="-fx-background-radius: 15px;" />
-            <ComboBox layoutX="86.0" layoutY="206.0" prefHeight="35.0" prefWidth="271.0" promptText="country" style="-fx-background-radius: 15px;" />
-            <Button layoutX="129.0" layoutY="308.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="172.0" style="-fx-background-color: blue; -fx-text-fill: white; -fx-background-radius: 10px;" text="Create Account">
+            <TextField fx:id="userField" layoutX="89.0" layoutY="56.0" prefHeight="35.0" prefWidth="265.0" promptText="username" style="-fx-background-radius: 15px;" />
+            <TextField fx:id="emailField" layoutX="89.0" layoutY="105.0" prefHeight="35.0" prefWidth="265.0" promptText="email" style="-fx-background-radius: 15px;" />
+            <ComboBox fx:id="regionSelection" layoutX="86.0" layoutY="206.0" prefHeight="35.0" prefWidth="271.0" promptText="Region" style="-fx-background-radius: 15px;" />
+            <Button fx:id="signUpBtn" layoutX="129.0" layoutY="308.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="172.0" style="-fx-background-color: blue; -fx-text-fill: white; -fx-background-radius: 10px;" text="Create Account">
                <font>
                   <Font name="System Bold" size="12.800000190734863" />
                </font>
             </Button>
             <Label layoutX="144.0" layoutY="339.0" text="Already a user?" />
-            <Button layoutX="222.0" layoutY="335.0" mnemonicParsing="false" style="-fx-background-color: transparent; -fx-text-fill: blue;" text="Login" underline="true">
+            <Button fx:id="loginBtn" layoutX="222.0" layoutY="335.0" mnemonicParsing="false" style="-fx-background-color: transparent; -fx-text-fill: blue;" text="Login" underline="true">
                <font>
                   <Font name="Arial Rounded MT Bold" size="14.0" />
                </font>
             </Button>
-            <ComboBox layoutX="86.0" layoutY="254.0" prefHeight="35.0" prefWidth="271.0" promptText="Sex" style="-fx-background-radius: 15px;" />
-            <PasswordField layoutX="87.0" layoutY="152.0" prefHeight="35.0" prefWidth="271.0" promptText="password" style="-fx-background-radius: 15px;" />
+            <ComboBox fx:id="genderSelection" layoutX="86.0" layoutY="254.0" prefHeight="35.0" prefWidth="271.0" promptText="Sex" style="-fx-background-radius: 15px;" />
+            <PasswordField fx:id="pwdField" layoutX="87.0" layoutY="152.0" prefHeight="35.0" prefWidth="271.0" promptText="password" style="-fx-background-radius: 15px;" />
          </children>
       </Pane>
    </children>
