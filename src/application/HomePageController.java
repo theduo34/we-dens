@@ -1,4 +1,4 @@
-package application.dental.homepage;
+package application;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -26,6 +26,7 @@ public class HomePageController implements Initializable{
 
 	@FXML
 	private Label welcomeLabel;
+	
 
 
 

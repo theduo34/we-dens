@@ -12,11 +12,11 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="637.0" prefWidth="917.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.dental.homepage.HomePageController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="637.0" prefWidth="917.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.HomePageController">
    <children>
       <ImageView fitHeight="92.0" fitWidth="85.0" layoutX="88.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../../../Pictures/Saved%20Photos/logo2.png" />
+            <Image url="@../resource/Saved%20Photos/logo2.png" />
          </image>
       </ImageView>
       <MenuButton layoutX="810.0" layoutY="18.0" mnemonicParsing="false" style="-fx-background-color: tramsparent;" text="Profile">
@@ -93,25 +93,25 @@
       </Label>
       <ImageView fitHeight="393.0" fitWidth="589.0" layoutX="328.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../../../Pictures/Saved%20Photos/wall1.jpeg" />
+            <Image url="@../resource/Saved%20Photos/wallpaper.jpeg" />
          </image>
       </ImageView>
-      <Button fx:id="homeBtn" layoutX="462.0" layoutY="19.0" mnemonicParsing="false" style="-fx-background-color: transparent;" text="HOME" underline="true">
+      <Button fx:id="homeBtn" layoutX="490.0" layoutY="19.0" mnemonicParsing="false" style="-fx-background-color: transparent;" text="HOME" underline="true">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Button>
-      <Button fx:id="aboutBtn" layoutX="532.0" layoutY="19.0" mnemonicParsing="false" style="-fx-background-color: transparent;" text="ABOUT" underline="true">
+      <Button fx:id="aboutBtn" layoutX="564.0" layoutY="19.0" mnemonicParsing="false" style="-fx-background-color: transparent;" text="ABOUT" underline="true">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Button>
-      <Button fx:id="contactBtn" layoutX="602.0" layoutY="19.0" mnemonicParsing="false" style="-fx-background-color: transparent;" text="CONTACT" underline="true">
+      <Button fx:id="contactBtn" layoutX="648.0" layoutY="19.0" mnemonicParsing="false" style="-fx-background-color: transparent;" text="CONTACT" underline="true">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Button>
-      <MenuButton fx:id="accountBtn" layoutX="757.0" layoutY="19.0" mnemonicParsing="false" style="-fx-background-color: transprent;" text="ACCOUNT" underline="true">
+      <MenuButton layoutX="757.0" layoutY="19.0" mnemonicParsing="false" style="-fx-background-color: transprent;" text="ACCOUNT" underline="true">
         <items>
           <MenuItem mnemonicParsing="false" text="Profile" />
           <MenuItem mnemonicParsing="false" text="Add Appointment" />

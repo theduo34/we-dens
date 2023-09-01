@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="648.0" prefWidth="898.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.NewUserController">
+   <children>
+      <ImageView fitHeight="86.0" fitWidth="82.0" layoutX="114.0" layoutY="21.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../resource/Saved%20Photos/logo2.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="126.0" layoutY="52.0" style="-fx-text-fill: WHITE;" text="WE`DENS">
+         <font>
+            <Font name="System Bold" size="12.800000190734863" />
+         </font>
+      </Label>
+      <Label layoutX="218.0" layoutY="53.0" text="CREATE ACCOUNT">
+         <font>
+            <Font name="System Bold Italic" size="24.0" />
+         </font>
+      </Label>
+      <Pane layoutX="61.0" layoutY="120.0" prefHeight="428.0" prefWidth="776.0" style="-fx-background-radius: 20px; -fx-border-color: #ccc;">
+         <children>
+            <Pane layoutX="403.0" layoutY="1.0" prefHeight="424.0" prefWidth="374.0" style="-fx-background-color: #5dc9e1;">
+               <children>
+                  <Label layoutX="14.0" layoutY="23.0" text="Welcome to We`dens! ">
+                     <font>
+                        <Font name="System Bold Italic" size="24.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="4.0" layoutY="66.0" text="We're excited to have you join our dentist app">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="4.0" layoutY="86.0" text="With We`dens, you can easily schedule">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="4.0" layoutY="106.0" text="appointments, receive reminders, access ">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="4.0" layoutY="126.0" text="dental resources, and stay connected with">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="4.0" layoutY="146.0" text="your dental team.">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="1.0" layoutY="198.0" text="Sign up now to take advantage of our ">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="1.0" layoutY="218.0" text="convenient and personalized dental services.">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="1.0" layoutY="238.0" text="If you have any questions, our support team is ">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="1.0" layoutY="258.0" text="ready to assist you.">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="4.0" layoutY="312.0" text="Get ready for a healthier smile with We`dens!">
+                     <font>
+                        <Font name="System Bold Italic" size="17.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="4.0" layoutY="349.0" text="Best regards,">
+                     <font>
+                        <Font name="System Bold Italic" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="4.0" layoutY="369.0" text="The We`dens Team.">
+                     <font>
+                        <Font name="System Bold Italic" size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Label layoutX="90.0" layoutY="23.0" text="Hello,Friend!">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <TextField fx:id="userField" layoutX="89.0" layoutY="56.0" prefHeight="35.0" prefWidth="265.0" promptText="username" style="-fx-background-radius: 15px;" />
+            <TextField fx:id="emailField" layoutX="89.0" layoutY="105.0" prefHeight="35.0" prefWidth="265.0" promptText="email" style="-fx-background-radius: 15px;" />
+            <Button fx:id="signUpBtn" layoutX="126.0" layoutY="278.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="172.0" style="-fx-background-color: blue; -fx-text-fill: white; -fx-background-radius: 10px;" text="Create Account">
+               <font>
+                  <Font name="System Bold" size="12.800000190734863" />
+               </font>
+            </Button>
+            <Label layoutX="144.0" layoutY="308.0" text="Already a user?" />
+            <Button fx:id="loginBtn" layoutX="222.0" layoutY="304.0" mnemonicParsing="false" onAction="#moveToLogin" style="-fx-background-color: transparent; -fx-text-fill: blue;" text="Login" underline="true">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="14.0" />
+               </font>
+            </Button>
+            <PasswordField fx:id="pwdField" layoutX="87.0" layoutY="152.0" prefHeight="35.0" prefWidth="271.0" promptText="password" style="-fx-background-radius: 15px;" />
+            <PasswordField fx:id="phoneField" layoutX="86.0" layoutY="200.0" prefHeight="35.0" prefWidth="271.0" promptText="telephone" style="-fx-background-radius: 15px;" />
+            <RadioButton fx:id="male" layoutX="94.0" layoutY="247.0" mnemonicParsing="false" text="Male" />
+            <RadioButton fx:id="female" layoutX="174.0" layoutY="247.0" mnemonicParsing="false" text="Female" />
+            <RadioButton fx:id="other" layoutX="264.0" layoutY="247.0" mnemonicParsing="false" text="Other" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
