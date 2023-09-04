@@ -1,160 +1,222 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuButton?>
 <?import javafx.scene.control.MenuItem?>
-<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="647.0" prefWidth="937.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.HomePageController">
+<AnchorPane prefHeight="666.0" prefWidth="962.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.HomePageController">
    <children>
-      <ImageView fitHeight="92.0" fitWidth="85.0" layoutX="88.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../resource/Saved%20Photos/logo2.png" />
-         </image>
-      </ImageView>
-      <MenuButton layoutX="810.0" layoutY="18.0" mnemonicParsing="false" style="-fx-background-color: tramsparent;" text="Profile">
-        <items>
-          <MenuItem mnemonicParsing="false" text="Account History" />
-            <MenuItem mnemonicParsing="false" text="Add Appointment" />
-            <MenuItem mnemonicParsing="false" text="View Appointment" />
-            <Menu mnemonicParsing="false" text="Settings">
+      <AnchorPane fx:id="homeForm" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="652.2" prefWidth="937.6" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <ImageView fitHeight="92.0" fitWidth="85.0" layoutX="88.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../resource/Saved%20Photos/logo2.png" />
+               </image>
+            </ImageView>
+            <MenuButton layoutX="810.0" layoutY="18.0" mnemonicParsing="false" style="-fx-background-color: tramsparent;" text="Profile">
               <items>
-                <MenuItem mnemonicParsing="false" text="Update username" />
-                  <MenuItem mnemonicParsing="false" text="change password" />
-                  <MenuItem mnemonicParsing="false" text="change location" />
-                  <MenuItem mnemonicParsing="false" text="clear History" />
-                  <MenuItem mnemonicParsing="false" text="Help" />
-                  <MenuItem mnemonicParsing="false" text="Exit" />
+                <MenuItem mnemonicParsing="false" text="Account History" />
+                  <MenuItem mnemonicParsing="false" text="Add Appointment" />
+                  <MenuItem mnemonicParsing="false" text="View Appointment" />
+                  <Menu mnemonicParsing="false" text="Settings">
+                    <items>
+                      <MenuItem mnemonicParsing="false" text="Update username" />
+                        <MenuItem mnemonicParsing="false" text="change password" />
+                        <MenuItem mnemonicParsing="false" text="change location" />
+                        <MenuItem mnemonicParsing="false" text="clear History" />
+                        <MenuItem mnemonicParsing="false" text="Help" />
+                        <MenuItem mnemonicParsing="false" text="Exit" />
+                    </items>
+                  </Menu>
+                  <MenuItem mnemonicParsing="false" text="Notification" />
+                  <MenuItem mnemonicParsing="false" text="Logout" />
               </items>
-            </Menu>
-            <MenuItem mnemonicParsing="false" text="Notification" />
-            <MenuItem mnemonicParsing="false" text="Logout" />
-        </items>
-         <font>
-            <Font name="System Bold" size="14.0" />
-         </font>
-      </MenuButton>
-      <Pane layoutX="35.0" layoutY="383.0" prefHeight="218.0" prefWidth="283.0" style="-fx-background-color: #93ece9; -fx-background-radius: 10px;">
-         <children>
-            <Button fx:id="seeMoreBtn" layoutX="37.0" layoutY="139.0" mnemonicParsing="false" style="-fx-background-color: white; -fx-background-radius: 15px;" text="See more" />
-            <Label layoutX="24.0" layoutY="62.0" text="EMERGENCY SERVICE">
                <font>
-                  <Font name="Arial Rounded MT Bold" size="12.800000190734863" />
+                  <Font name="System Bold" size="14.0" />
                </font>
-            </Label>
-         </children>
-      </Pane>
-      <Pane layoutX="319.0" layoutY="374.0" prefHeight="238.0" prefWidth="294.0" style="-fx-background-color: #c8f7f4; -fx-background-radius: 10px;">
-         <children>
-            <Button fx:id="bookNowBtn" layoutX="39.0" layoutY="160.0" mnemonicParsing="false" style="-fx-background-color: white; -fx-background-radius: 15px;" text="Book Now" />
-            <Label layoutX="33.0" layoutY="73.0" text="DO YOU WANT TO MAKE AN">
-               <font>
-                  <Font name="Arial Rounded MT Bold" size="12.800000190734863" />
-               </font>
-            </Label>
-            <Label layoutX="33.0" layoutY="89.0" text="APPOINTMENT">
-               <font>
-                  <Font name="Arial Rounded MT Bold" size="12.800000190734863" />
-               </font>
-            </Label>
-         </children>
-      </Pane>
-      <Pane layoutX="607.0" layoutY="383.0" prefHeight="218.0" prefWidth="294.0" style="-fx-background-color: #93ece9; -fx-background-radius: 10px;">
-         <children>
-            <Button fx:id="contactUsBtn" layoutX="29.0" layoutY="147.0" mnemonicParsing="false" style="-fx-background-color: white; -fx-background-radius: 15px;" text="Contact Us" textFill="#151515" />
-            <Label layoutX="29.0" layoutY="64.0" text="OPENING HOURS">
-               <font>
-                  <Font name="Arial Rounded MT Bold" size="12.800000190734863" />
-               </font>
-            </Label>
-            <Label layoutX="29.0" layoutY="90.0" text="Monday-Friday">
-               <font>
-                  <Font size="10.0" />
-               </font>
-            </Label>
-            <Label layoutX="29.0" layoutY="111.0" text="Saturday-Sunday">
-               <font>
-                  <Font size="10.0" />
-               </font>
-            </Label>
-         </children>
-      </Pane>
-      <Label layoutX="99.0" layoutY="31.0" prefHeight="30.0" prefWidth="67.0" style="-fx-text-fill: fffff;" text="WE`DENS" textFill="#eaeae0">
-         <font>
-            <Font name="System Bold Italic" size="14.0" />
-         </font>
-      </Label>
-      <ImageView fitHeight="393.0" fitWidth="589.0" layoutX="348.0" layoutY="-5.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../resource/Saved%20Photos/wallpaper.jpeg" />
-         </image>
-      </ImageView>
-      <Button fx:id="homeBtn" layoutX="498.0" layoutY="18.0" mnemonicParsing="false" style="-fx-background-color: transparent;" text="HOME" underline="true">
-         <font>
-            <Font name="System Bold" size="14.0" />
-         </font>
-      </Button>
-      <Button fx:id="aboutBtn" layoutX="589.0" layoutY="18.0" mnemonicParsing="false" style="-fx-background-color: transparent;" text="ABOUT" underline="true">
-         <font>
-            <Font name="System Bold" size="14.0" />
-         </font>
-      </Button>
-      <Button fx:id="contactBtn" layoutX="678.0" layoutY="18.0" mnemonicParsing="false" style="-fx-background-color: transparent;" text="CONTACT" underline="true">
-         <font>
-            <Font name="System Bold" size="14.0" />
-         </font>
-      </Button>
-      <MenuButton layoutX="785.0" layoutY="16.0" mnemonicParsing="false" style="-fx-background-color: transprent;" text="ACCOUNT" underline="true">
-        <items>
-          <MenuItem mnemonicParsing="false" text="Profile" />
-          <MenuItem mnemonicParsing="false" text="Add Appointment" />
-            <MenuItem mnemonicParsing="false" text="Veiw Appointment" />
-            <Menu mnemonicParsing="false" text="Settings">
-              <items>
-                <MenuItem mnemonicParsing="false" text="change password" />
-                  <MenuItem mnemonicParsing="false" text="upadate username" />
-                  <MenuItem mnemonicParsing="false" text="change location" />
-                  <MenuItem mnemonicParsing="false" text="Help" />
-                  <MenuItem mnemonicParsing="false" text="Exit" />
-              </items>
-            </Menu>
-            <MenuItem mnemonicParsing="false" text="FAG" />
-            <SeparatorMenuItem mnemonicParsing="false">
-               <content>
-                  <Button fx:id="logoutBtn" mnemonicParsing="false" style="-fx-background-color: transparent; -fx-text-fill: black;" text="Logout">
+            </MenuButton>
+            <Pane layoutX="46.0" layoutY="390.0" prefHeight="218.0" prefWidth="283.0" style="-fx-background-color: #93ece9; -fx-background-radius: 10px;">
+               <children>
+                  <Button fx:id="seeMoreBtn" layoutX="26.0" layoutY="155.0" mnemonicParsing="false" style="-fx-background-color: white; -fx-background-radius: 15px;" text="See more">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
                      <font>
                         <Font name="System Bold" size="12.800000190734863" />
                      </font>
                   </Button>
-               </content>
-            </SeparatorMenuItem>
-        </items>
-         <font>
-            <Font name="System Bold" size="14.0" />
-         </font>
-      </MenuButton>
-      <Label fx:id="welcomeLabel" layoutX="33.0" layoutY="123.0" prefHeight="30.0" prefWidth="264.0" text="Welcome!">
-         <font>
-            <Font name="System Bold" size="20.0" />
-         </font>
-      </Label>
-      <Label layoutX="32.0" layoutY="176.0" prefHeight="27.0" prefWidth="258.0" text="How may we render our kind">
-         <font>
-            <Font size="20.0" />
-         </font>
-      </Label>
-      <Label layoutX="32.0" layoutY="203.0" prefHeight="27.0" prefWidth="167.0" text="of service to you?">
-         <font>
-            <Font size="20.0" />
-         </font>
-      </Label>
-      <Pane layoutX="30.0" layoutY="116.0" prefHeight="158.0" prefWidth="270.0" style="-fx-border-color: #ccc;" />
+                  <Label layoutX="26.0" layoutY="48.0" text="EMERGENCY SERVICE">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="12.800000190734863" />
+                     </font>
+                  </Label>
+                  <Label layoutX="27.0" layoutY="81.0" text="Call our emergency dental hotline at " />
+                  <Label layoutX="27.0" layoutY="100.0" text="[+233-20 862 4003] for immediate " />
+                  <Label layoutX="26.0" layoutY="119.0" text="assistance in case of dental emergencies." />
+               </children>
+            </Pane>
+            <Pane layoutX="333.0" layoutY="387.0" prefHeight="226.0" prefWidth="283.0" style="-fx-background-color: #c8f7f4; -fx-background-radius: 10px;">
+               <children>
+                  <Button fx:id="bookNowBtn" layoutX="39.0" layoutY="160.0" mnemonicParsing="false" style="-fx-background-color: white; -fx-background-radius: 15px;" text="Book Now">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <font>
+                        <Font name="System Bold" size="12.800000190734863" />
+                     </font>
+                  </Button>
+                  <Label layoutX="24.0" layoutY="50.0" text="DO YOU WANT TO MAKE AN">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="12.800000190734863" />
+                     </font>
+                  </Label>
+                  <Label layoutX="24.0" layoutY="66.0" text="APPOINTMENT">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="12.800000190734863" />
+                     </font>
+                  </Label>
+                  <Button fx:id="bookingBtn" layoutX="146.0" layoutY="160.0" mnemonicParsing="false" onAction="#movetobookings" prefHeight="27.0" prefWidth="111.0" style="-fx-background-color: white; -fx-background-radius: 15px;" text="Bookings">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <font>
+                        <Font name="System Bold" size="12.800000190734863" />
+                     </font>
+                  </Button>
+                  <Label layoutX="13.0" layoutY="94.0" text="To schedule an appointment, simply click the " />
+                  <Label layoutX="14.0" layoutY="113.0" text="Book now button" />
+               </children>
+            </Pane>
+            <Pane layoutX="622.0" layoutY="387.0" prefHeight="218.0" prefWidth="294.0" style="-fx-background-color: #93ece9; -fx-background-radius: 10px;">
+               <children>
+                  <Button fx:id="contactUsBtn" layoutX="24.0" layoutY="158.0" mnemonicParsing="false" style="-fx-background-color: white; -fx-background-radius: 15px;" text="Contact Us" textFill="#151515">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Button>
+                  <Label layoutX="24.0" layoutY="49.0" text="OPENING HOURS">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="12.800000190734863" />
+                     </font>
+                  </Label>
+                  <Label layoutX="33.0" layoutY="80.0" text="Monday-Friday">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="33.0" layoutY="102.0" text="Saturday-Sunday">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Label layoutX="99.0" layoutY="31.0" prefHeight="30.0" prefWidth="67.0" style="-fx-text-fill: fffff;" text="WE`DENS" textFill="#eaeae0">
+               <font>
+                  <Font name="System Bold Italic" size="14.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="393.0" fitWidth="589.0" layoutX="348.0" layoutY="-5.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../resource/Saved%20Photos/wallpaper.jpeg" />
+               </image>
+            </ImageView>
+            <Button fx:id="aboutBtn" layoutX="589.0" layoutY="18.0" mnemonicParsing="false" style="-fx-background-color: transparent;" text="ABOUT" underline="true">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="contactBtn" layoutX="678.0" layoutY="18.0" mnemonicParsing="false" style="-fx-background-color: transparent;" text="CONTACT" underline="true">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Button>
+            <Label fx:id="welcomeLabel" layoutX="33.0" layoutY="123.0" prefHeight="30.0" prefWidth="264.0" text="Welcome!">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="32.0" layoutY="176.0" prefHeight="35.0" prefWidth="310.0" text="How may we render our kind">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <Label layoutX="32.0" layoutY="203.0" prefHeight="35.0" prefWidth="205.0" text="of service to you?">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <Pane layoutX="1.0" layoutY="114.0" prefHeight="226.0" prefWidth="347.0" style="-fx-border-color: #ccc;" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="appointmentForm" layoutX="19.0" layoutY="14.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="646.0" prefWidth="943.0" visible="false" AnchorPane.bottomAnchor="52.0" AnchorPane.leftAnchor="19.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="14.0">
+         <children>
+            <ImageView fitHeight="92.0" fitWidth="85.0" layoutX="48.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../resource/Saved%20Photos/logo2.png" />
+               </image>
+            </ImageView>
+            <Pane layoutX="38.0" layoutY="106.0" prefHeight="430.0" prefWidth="868.0" style="-fx-background-color: #93ece9; -fx-background-radius: 10px;">
+               <children>
+                  <TableView fx:id="appointmentForm_tableView" layoutX="14.0" layoutY="14.0" prefHeight="401.0" prefWidth="841.0">
+                    <columns>
+                      <TableColumn fx:id="appointmentForm_tableView_col_name" prefWidth="195.19997787475586" text="Name" />
+                      <TableColumn fx:id="appointmentForm_tableView_col_phone" prefWidth="156.80006408691406" text="Phone" />
+                        <TableColumn fx:id="appointmentForm_tableView_col_location" prefWidth="176.79998779296875" text="location" />
+                        <TableColumn fx:id="appointmentForm_tableView_col_email" prefWidth="191.99993896484375" text="email" />
+                        <TableColumn fx:id="appointmentForm_tableView_col_date" prefWidth="123.20001220703125" text="date" />
+                    </columns>
+                  </TableView>
+               </children>
+            </Pane>
+            <Label layoutX="57.0" layoutY="30.0" prefHeight="30.0" prefWidth="67.0" style="-fx-text-fill: fffff;" text="WE`DENS" textFill="#eaeae0">
+               <font>
+                  <Font name="System Bold Italic" size="14.0" />
+               </font>
+            </Label>
+            <Button fx:id="appointmentForm_cancelBtn" layoutX="789.0" layoutY="560.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="75.0" style="-fx-background-radius: 7px; -fx-background-color: red;" text="Cancel">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button fx:id="appointmentForm_completeBtn" layoutX="655.0" layoutY="560.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="106.0" style="-fx-background-radius: 7px; -fx-background-color: lightgreen;" text="Complete">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button layoutX="38.0" layoutY="569.0" mnemonicParsing="false" onAction="#movetohome" prefHeight="27.0" prefWidth="80.0" style="-fx-background-radius: 7px;" text="Back">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Label layoutX="245.0" layoutY="42.0" text="WE'DENS BOOKING  APPOINTMENT LISTS">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
    </children>
 </AnchorPane>
