@@ -18,7 +18,7 @@
             <Image url="@../resource/Saved%20Photos/favorite.png" />
          </image>
       </ImageView>
-      <Pane layoutX="209.0" layoutY="91.0" prefHeight="338.0" prefWidth="549.0" style="-fx-border-color: #ccc;">
+      <Pane layoutX="209.0" layoutY="91.0" prefHeight="338.0" prefWidth="549.0">
          <children>
             <ImageView fitHeight="94.0" fitWidth="134.0" layoutX="202.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -50,7 +50,7 @@
                   <Font size="12.0" />
                </font>
             </PasswordField>
-            <Button fx:id="loginBtn" layoutX="231.0" layoutY="228.0" mnemonicParsing="false" onAction="#moveHomePage" onMouseClicked="#moveHomePage" prefHeight="27.0" prefWidth="151.0" style="-fx-background-color: blue; -fx-background-radius: 10px; -fx-text-fill: white;" text="Login">
+            <Button fx:id="loginBtn" layoutX="231.0" layoutY="228.0" mnemonicParsing="false" onAction="#handlelLogin" prefHeight="27.0" prefWidth="151.0" style="-fx-background-color: blue; -fx-background-radius: 10px; -fx-text-fill: white;" text="Login">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>

@@ -22,7 +22,7 @@ public class Main extends Application  {
 
 	@Override
 	public void start(Stage primaryStage) {
-				try {
+		try {
 			Parent root=FXMLLoader.load(Objects.requireNonNull(getClass().getResource("Login.fxml")));
 			Scene scene = new Scene(root);
 			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
