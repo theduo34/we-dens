@@ -12,9 +12,9 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.AddAppointmentController">
+<AnchorPane prefHeight="599.0" prefWidth="898.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.AddAppointmentController">
    <children>
-      <AnchorPane fx:id="clinicForm" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="636.8" prefWidth="892.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <AnchorPane fx:id="clinicForm" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="601.0" prefWidth="898.0" AnchorPane.bottomAnchor="39.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <ImageView fitHeight="92.0" fitWidth="117.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -64,7 +64,7 @@
                   </Label>
                </children>
             </Pane>
-            <Pane layoutX="16.0" layoutY="286.0" prefHeight="161.0" prefWidth="850.0" style="-fx-border-color: #ccc; -fx-background-radius: 10px;">
+            <Pane layoutX="14.0" layoutY="301.0" prefHeight="161.0" prefWidth="850.0" style="-fx-border-color: #ccc; -fx-background-radius: 10px;">
                <children>
                   <Label fx:id="clinicTwoName" layoutX="8.0" layoutY="53.0" text="We`dens{St.Joseph Hospistal}">
                      <font>
@@ -85,7 +85,7 @@
                         <Font size="14.0" />
                      </font>
                   </Label>
-                  <Label layoutX="654.0" layoutY="19.0" text="30 miles away">
+                  <Label layoutX="654.0" layoutY="19.0" text="50 miles away">
                      <font>
                         <Font name="System Italic" size="14.0" />
                      </font>
@@ -97,7 +97,7 @@
                   </Label>
                </children>
             </Pane>
-            <Button fx:id="backHomeBtn" layoutX="30.0" layoutY="555.0" mnemonicParsing="false" onAction="#backHomePage" prefHeight="27.0" prefWidth="114.0" style="-fx-background-radius: 7px;" text="Home">
+            <Button fx:id="backHomeBtn" layoutX="16.0" layoutY="572.0" mnemonicParsing="false" onAction="#backHomePage" prefHeight="27.0" prefWidth="114.0" style="-fx-background-radius: 7px;" text="Home">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
@@ -145,10 +145,10 @@
                         <Font name="System Italic" size="14.0" />
                      </font>
                   </Label>
-                  <TextField fx:id="bookingFirstName" layoutX="139.0" layoutY="78.0" style="-fx-background-radius: 10px;" />
-                  <TextField fx:id="bookingEmail" layoutX="517.0" layoutY="78.0" style="-fx-background-radius: 10px;" />
-                  <TextField fx:id="bookingLastName" layoutX="139.0" layoutY="159.0" style="-fx-background-radius: 10px;" />
-                  <TextField fx:id="bookingPhoneNumber" layoutX="139.0" layoutY="231.0" style="-fx-background-radius: 10px;" />
+                  <TextField fx:id="bookingFirstName" layoutX="139.0" layoutY="77.0" prefHeight="30.0" prefWidth="158.0" style="-fx-background-radius: 10px;" />
+                  <TextField fx:id="bookingEmail" layoutX="517.0" layoutY="78.0" prefHeight="30.0" prefWidth="158.0" style="-fx-background-radius: 10px;" />
+                  <TextField fx:id="bookingLastName" layoutX="139.0" layoutY="159.0" prefHeight="30.0" prefWidth="158.0" style="-fx-background-radius: 10px;" />
+                  <TextField fx:id="bookingPhoneNumber" layoutX="139.0" layoutY="231.0" prefHeight="30.0" prefWidth="158.0" style="-fx-background-radius: 10px;" />
                   <Label alignment="CENTER" layoutX="16.0" layoutY="82.0" prefHeight="20.0" prefWidth="122.0" text="First Name:">
                      <font>
                         <Font name="System Bold" size="14.0" />
@@ -170,19 +170,19 @@
                         <Font name="System Bold" size="14.0" />
                      </font>
                   </Label>
-                  <DatePicker fx:id="bookingDate" layoutX="139.0" layoutY="299.0" prefHeight="27.0" prefWidth="158.0" style="-fx-border-radius: 10px;" />
+                  <DatePicker fx:id="bookingDate" layoutX="139.0" layoutY="299.0" prefHeight="30.0" prefWidth="158.0" style="-fx-border-radius: 10px;" />
                   <Label alignment="CENTER" layoutX="20.0" layoutY="303.0" prefHeight="20.0" prefWidth="122.0" text="Date of Appoint:">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" layoutX="12.0" layoutY="163.0" prefHeight="20.0" prefWidth="122.0" text="Last Name:">
                      <font>
                         <Font name="System Bold" size="14.0" />
                      </font>
                   </Label>
                </children>
             </Pane>
-            <Label alignment="CENTER" layoutX="31.0" layoutY="275.0" prefHeight="20.0" prefWidth="122.0" text="Last Name:">
-               <font>
-                  <Font name="System Bold" size="14.0" />
-               </font>
-            </Label>
             <Button fx:id="bookingBack" layoutX="35.0" layoutY="576.0" mnemonicParsing="false" onAction="#backToClinicPage" prefHeight="27.0" prefWidth="114.0" style="-fx-background-radius: 7px;" text="Clinics">
                <cursor>
                   <Cursor fx:constant="HAND" />
