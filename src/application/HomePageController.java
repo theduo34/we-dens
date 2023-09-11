@@ -1,6 +1,11 @@
+/*
+ * the back building block for all the activities to be perform
+ * in the home page of the app
+ */
 package application;
 
 import java.io.IOException;
+
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -77,18 +82,22 @@ public class HomePageController implements Initializable{
 	@FXML
 	private TableColumn<BookingModel, String> appointmentForm_tableView_col_phone;
 
-	ObservableList<BookingModel> bookingModelObservableList = FXCollections.observableArrayList();
 
+	private ObservableList<BookingModel> BookingModelList;
 
 
 	GetData getData = new GetData(); 
+	private int id;
 
 
 	@Override
 	public void initialize(URL location, ResourceBundle resource) {
 
-		findAccess(getData.accesstype);
-		setUserInformation(getData.userName); 
+		findAccess(GetData.accesstype);
+		setUserInformation(GetData.userName); 
+		movetohome();
+//		showBookingList();
+
 
 		aboutBtn.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
@@ -106,31 +115,20 @@ public class HomePageController implements Initializable{
 				}
 			}
 		});
-		//		homeBtn.setOnAction(new EventHandler<ActionEvent>() {
-		//			@Override
-		//			public void handle(ActionEvent event) {
-		//				try {
-		//					FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("HomePage.fxml"));
-		//					Scene scene = new Scene(fxmlLoader.load());
-		//					Stage stagenew = new Stage();
-		//					stagenew.setTitle("HomePage!");
-		//					stagenew.setScene(scene);
-		//					stagenew.showAndWait();
-		//				}catch(IOException  e) {
-		//					e.printStackTrace();
-		//					System.out.println(e.getMessage());
-		//					}
-		//				}
-		//			});
 
 
+
+
+		/*
+		 * contact button clicked
+		 */
 		contactBtn.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent event) {
 				try {
 					// Display the contact information when the button is clicked
 					Label contactInfoLabel = new Label();
-					String contactInfo = "Support Team Contacts:\n\n"
+					String contactInfo = "Support Team Desk:\n\n"
 							+ " Email: support@example.com\n"
 							+ " Phone: +233 20-862-4003\n"
 							+ " Office: 123 Main, Franko Estate";
@@ -155,7 +153,9 @@ public class HomePageController implements Initializable{
 			}
 		});
 
-
+		/*
+		 * book now button clicked
+		 */
 		bookNowBtn.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent event) {
@@ -176,6 +176,9 @@ public class HomePageController implements Initializable{
 			}
 		});
 
+		/*
+		 * contact us button clicked
+		 */
 		contactUsBtn.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent event) {
@@ -208,6 +211,9 @@ public class HomePageController implements Initializable{
 		});
 
 
+		/*
+		 * see more button clicked
+		 */
 		seeMoreBtn.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent event) {
@@ -215,7 +221,7 @@ public class HomePageController implements Initializable{
 					// Display the contact information when the button is clicked
 					Label emergencyService = new Label();
 					String urgentInfo = "Emergency Support Team:\n"
-							+ " >>>> 24/7 Emergency Hotline: Call our emergency "
+							+ " >>>> 24/7 Emergency Hotline: Call our emergency\n"
 							+ "dental hotline at [+233-20 682 4003] for \n"
 							+ "immediate assistance in case of \n"
 							+ "dental emergencies\n"
@@ -234,14 +240,14 @@ public class HomePageController implements Initializable{
 							+ "committed to delivering efficient and effective \n"
 							+ "emergency dental care \n";
 
-					emergencyService.setFont(Font.font("Sans Serif",FontWeight.NORMAL,14));
+					emergencyService.setFont(Font.font("Tohama",FontWeight.BOLD,18));
 					emergencyService.setTextFill(Color.WHITE);
-					emergencyService.setBackground(new Background(new BackgroundFill(Color.VIOLET,null,null)));
+					emergencyService.setBackground(new Background(new BackgroundFill(Color.SLATEBLUE,null,null)));
 					emergencyService.setText(urgentInfo);
 
 					Stage stage=new Stage();
 					StackPane root =new StackPane();
-					Scene scene=new Scene(root,500,500);
+					Scene scene=new Scene(root,500,510);
 
 					root.getChildren().add(emergencyService);
 					stage.setTitle("Emergency Service!");
@@ -254,11 +260,14 @@ public class HomePageController implements Initializable{
 				}    
 			}
 		});
-
-
+		
 	}
 
-
+	
+	/*
+	 * patient booking status method
+	 * >>>Status:Cancelled
+	 */
 	public void cancelBokking() {
 		String sql = "UPDATE booking SET status=? WHERE id=?";
 
@@ -270,32 +279,26 @@ public class HomePageController implements Initializable{
 
 			preparedStatement = connection.prepareStatement(sql);
 			preparedStatement.setString(1, "canceled");
-			preparedStatement.setString(2, "");
-			int result =preparedStatement.executeUpdate();                                           //user credentials in existence 
+			preparedStatement.setInt(2, id);
+			int result =preparedStatement.executeUpdate();                                            
 			if(result > 0) {
-				showAlert(Alert.AlertType.INFORMATION,"INFORMATION MESSAGE","Booking canceled");
+				showAlert(Alert.AlertType.INFORMATION,"INFORMATION MESSAGE","Booking cancelled");
 			}
 		}catch(Exception e) {
 			e.printStackTrace();
 			e.getCause();
 		}
-
-
+		showBookingList();
+		appointmentForm_cancelBtn.setDisable(true);
+        appointmentForm_completeBtn.setDisable(true);
 	}
-	public void findAccess(String id) {
-		if(id.equals("admin")) {
-			bookingBtn.setVisible(true);
-		}else {
-			bookingBtn.setVisible(false);
-		}			
-
-	}
-
-	public void movetobookings() {
-		appointmentForm.setVisible(true);
-		homeForm.setVisible(false);
-
-		String sql = "SELECT * FROM booking where status=?";
+	
+	/*
+	 * patient booking status method
+	 * >>>>Status:Completed
+	 */
+	public void completeBokking() {
+		String sql = "UPDATE booking SET status=? WHERE id=?";
 
 		PreparedStatement preparedStatement;
 		ResultSet resultSet;
@@ -303,11 +306,108 @@ public class HomePageController implements Initializable{
 			DButil connect = new DButil();
 			Connection connection = connect.getConnection();
 
+			preparedStatement = connection.prepareStatement(sql);
+			preparedStatement.setString(1, "completed");
+			preparedStatement.setInt(2, id);
+			int result =preparedStatement.executeUpdate();                                            
+			if(result > 0) {
+				showAlert(Alert.AlertType.INFORMATION,"INFORMATION MESSAGE","Booking completed");
+			}
+		}catch(Exception e) {
+			e.printStackTrace();
+			e.getCause();
+		}
+		showBookingList();
+		appointmentForm_cancelBtn.setDisable(true);
+        appointmentForm_completeBtn.setDisable(true);
+	}
+	
+	/*
+	 * method for admin to find/get access to  appointment list
+	 * >>>NotE only admin 
+	 */
+	public void findAccess(String id) {
+		if(id.equals("admin")) {
+			bookingBtn.setVisible(true);
+		}else {
+			bookingBtn.setVisible(false);
+		}			
+  }
+	
+
+	/*
+	 * On Action that will shift to appiontment form
+	 * >>>>CancelBtn:disable
+	 * >>>>CompleteBtn:disable
+	 */
+	public void movetobookings() {
+		appointmentForm.setVisible(true);
+		homeForm.setVisible(false);
+		showBookingList();
+		appointmentForm_cancelBtn.setDisable(true);
+        appointmentForm_completeBtn.setDisable(true);
+
+	}
+
+	/*
+	 * Ensure that a list selected will able the
+	 * complete and cancel button to be clickable
+	 */
+	public void bookingsSelect(){
+        try {
+        	BookingModel cust = appointmentForm_tableView.selectionModelProperty().get().getSelectedItem();
+            int num = appointmentForm_tableView.getSelectionModel().getFocusedIndex();
+
+            if ((num - 1)< -1){
+                return;
+            }
+
+            id = cust.getId();
+           // System.out.println("id ="+id);
+
+
+            appointmentForm_cancelBtn.setDisable(false);
+            appointmentForm_completeBtn.setDisable(false);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+
+    }
+
+	/*
+	 * booking appointment lists table
+	 */
+	public void showBookingList() {
+		    BookingModelList = BookingModelListData();
+			appointmentForm_tableView_col_name.setCellValueFactory(new PropertyValueFactory<>("firstName"));
+			appointmentForm_tableView_col_phone.setCellValueFactory(new PropertyValueFactory<>("phone"));
+			appointmentForm_tableView_col_location.setCellValueFactory(new PropertyValueFactory<>("location"));
+			appointmentForm_tableView_col_date.setCellValueFactory(new PropertyValueFactory<>("date"));
+			appointmentForm_tableView_col_email.setCellValueFactory(new PropertyValueFactory<>("email"));
+
+			appointmentForm_tableView.setItems(BookingModelList);
+
+	}
+	/*
+	 * method to disappear list it status been marked completed
+	 * and display those with status pending
+	 */
+	private ObservableList<BookingModel> BookingModelListData(){
+        ObservableList<BookingModel> BookingModelList = FXCollections.observableArrayList();
+
+		String sql = "SELECT * FROM booking where status=?";
+
+		PreparedStatement preparedStatement;
+		ResultSet resultSet;
+		try {   
+			BookingModel bookings;
+			DButil connect = new DButil();
+			Connection connection = connect.getConnection();
+
 			preparedStatement=connection.prepareStatement(sql);
 			preparedStatement.setString(1, "pending");
 			resultSet = preparedStatement.executeQuery() ;            
 			while(resultSet.next()) {
-
 				Integer id = resultSet.getInt("id");
 				String firstName = resultSet.getString("firstName");
 				String lastName = resultSet.getString("lastName");
@@ -316,27 +416,31 @@ public class HomePageController implements Initializable{
 				String email = resultSet.getString("email");
 				String date = resultSet.getString("date");
 
-				bookingModelObservableList.add(new BookingModel(id,firstName,lastName,phone,location,email,date));
-
+				bookings = new BookingModel(id,firstName,lastName,phone,location,email,date);
+				BookingModelList.add(bookings);
 			}
-			appointmentForm_tableView_col_name.setCellValueFactory(new PropertyValueFactory<>("firstName"));
-			appointmentForm_tableView_col_phone.setCellValueFactory(new PropertyValueFactory<>("phone"));
-			appointmentForm_tableView_col_location.setCellValueFactory(new PropertyValueFactory<>("location"));
-			appointmentForm_tableView_col_date.setCellValueFactory(new PropertyValueFactory<>("date"));
-			appointmentForm_tableView_col_email.setCellValueFactory(new PropertyValueFactory<>("email"));
+			
+        }catch (Exception e){
+            e.printStackTrace();
+            e.getCause();
+        }
+        return BookingModelList;
+    }
 
-			appointmentForm_tableView.setItems(bookingModelObservableList);
 
-		}catch(Exception e) {
-			e.printStackTrace();
-			e.getCause();
-		}
-	}
-
+	/*
+	 * method to set switch forms.
+	 * >>>setting appointment form visibility to false
+	 * >>>setting home form visibility to true
+	 */
 	public void movetohome() {
 		appointmentForm.setVisible(false);
 		homeForm.setVisible(true);
 	}
+
+	/*
+	 * alert method
+	 */
 	private void showAlert(Alert.AlertType alertType, String title, String message) {
 		// TODO Auto-generated method stub
 		Alert alert=new Alert(alertType);
@@ -345,11 +449,12 @@ public class HomePageController implements Initializable{
 		alert.setContentText(message);
 		alert.show();
 	}
+	
 	/*
 	 * method to set welcome message and a username
 	 */
 	public void setUserInformation(String username) {
-		welcomeLabel.setText("Welcome," + username + "!");
+		welcomeLabel.setText("Hey," + username + "!");
 
 	}
 }
