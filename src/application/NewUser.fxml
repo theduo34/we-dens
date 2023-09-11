@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="648.0" prefWidth="898.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.NewUserController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="599.0" prefWidth="898.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.NewUserController">
    <children>
       <ImageView fitHeight="86.0" fitWidth="82.0" layoutX="114.0" layoutY="21.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -125,10 +125,10 @@
                </cursor>
             </Button>
             <PasswordField fx:id="pwdField" layoutX="87.0" layoutY="152.0" prefHeight="35.0" prefWidth="271.0" promptText="password" style="-fx-background-radius: 15px;" />
-            <PasswordField fx:id="phoneField" layoutX="86.0" layoutY="200.0" prefHeight="35.0" prefWidth="271.0" promptText="telephone" style="-fx-background-radius: 15px;" />
             <RadioButton fx:id="male" layoutX="94.0" layoutY="247.0" mnemonicParsing="false" text="Male" />
             <RadioButton fx:id="female" layoutX="174.0" layoutY="247.0" mnemonicParsing="false" text="Female" />
             <RadioButton fx:id="other" layoutX="264.0" layoutY="247.0" mnemonicParsing="false" text="Other" />
+            <TextField fx:id="phoneField" layoutX="89.0" layoutY="196.0" prefHeight="35.0" prefWidth="265.0" promptText="telephone" style="-fx-background-radius: 15px;" />
          </children>
       </Pane>
    </children>

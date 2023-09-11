@@ -20,6 +20,9 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.BackgroundFill;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import lib.DButil;
 
@@ -39,18 +42,20 @@ public class LoginController implements Initializable {
 
 	@FXML
 	private Button loginBtn;
-	
-	Stage stage;
-	
+
+
 
 	GetData getData = new GetData();
-	
+
 	@Override
 	public void initialize(URL location, ResourceBundle resource) {
-		
+
 	}
-	
-	
+
+
+	/*
+	 * method for user to login and verification
+	 */
 	public void handlelLogin() {
 		if(userFieldLogin.getText().isEmpty() || pwdFieldLogin.getText().isEmpty()) {
 			Alert alert=new Alert(Alert.AlertType.ERROR);
@@ -62,61 +67,65 @@ public class LoginController implements Initializable {
 		}
 	}
 	
+	
+  /*
+   * user login method
+   */
 	public void loginUser(String username,String password) {
 		String sql = "SELECT * FROM users WHERE username=? AND password=?";
-		
+        
 		PreparedStatement preparedStatement;
 		ResultSet resultSet;
 		try {           
 			DButil connect = new DButil();
 			Connection connection = connect.getConnection();
-			
+
 			preparedStatement = connection.prepareStatement(sql);
 			preparedStatement.setString(1, username);
 			preparedStatement.setString(2, password);
-			resultSet=preparedStatement.executeQuery() ;                                           //user credentials in existence 
-				if(resultSet.next()) {
-					
-					try {
-						
-						System.out.println("logged in");
-						Stage stageClose = (Stage)loginBtn.getScene().getWindow() ;
-						stageClose.close();
+			resultSet=preparedStatement.executeQuery() ;               
+			if(resultSet.next()) {
 
-						getData.userName = resultSet.getString("username");
-						getData.accesstype = resultSet.getString("accounType");
-						
-						FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("HomePage.fxml"));
-						Scene scene = new Scene(fxmlLoader.load());
-						Stage stage = new Stage();
-						stage.setTitle("Home");
-						stage.setScene(scene);
-						stage.show();
-						
-						
-					}catch(IOException  e) {
-						e.printStackTrace();
-						System.out.println(e.getMessage());
-					}
-				}else {                                                
-					System.out.println("Incorrect credentials");
-							Alert alert=new Alert(Alert.AlertType.ERROR);
-							alert.setHeaderText("Sorry!Incorrect");
-							alert.setContentText("Credentials provided are Incorrect");
-							alert.show();
-						
-					}
-        }catch(SQLException e) {
+				try {
+
+					System.out.println("logged in");
+					Stage stageClose = (Stage)loginBtn.getScene().getWindow();
+					stageClose.close();
+
+					GetData.userName = resultSet.getString("username");
+					GetData.accesstype = resultSet.getString("accounType");
+
+					FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("HomePage.fxml"));
+					Scene scene = new Scene(fxmlLoader.load());
+					Stage stage = new Stage();
+					stage.setTitle("Home");
+					stage.setScene(scene);
+					stage.show();
+				}catch(IOException  e) {
+					e.printStackTrace();
+					System.out.println(e.getMessage());
+				}
+			}else {                                                
+				//System.out.println("Incorrect credentials");
+				Alert alert=new Alert(Alert.AlertType.ERROR);
+				alert.setHeaderText("Forms Error!");
+				alert.setContentText("Incorrect credentials");
+				alert.show();
+			}
+		}catch(SQLException e) {
 			e.printStackTrace();
 		}
-		
+
 	}
 
-	
+  /*
+   * method to change scene from login page
+   * to sign up page
+   */
 	public void moveToSignUp() {
 		try {
-			System.out.println("logged in");
-			Stage stage = (Stage)signUpBtn.getScene().getWindow() ;
+			//System.out.println("Moved to Sign-up!");
+			Stage stage = (Stage)signUpBtn.getScene().getWindow();
 			stage.close();
 			FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("NewUser.fxml"));
 			Scene scene = new Scene(fxmlLoader.load());
@@ -129,6 +138,6 @@ public class LoginController implements Initializable {
 			System.out.println(e.getMessage());
 		}
 	}
-	
-	
+
+
 }

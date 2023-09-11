@@ -48,9 +48,9 @@ public class NewUserController implements Initializable {
 	@FXML
 	private RadioButton male, female,other;
 
-
 	@FXML
 	private Button signUpBtn,loginBtn;
+
 	String selectgender;
 
 	@Override
@@ -72,13 +72,13 @@ public class NewUserController implements Initializable {
 	}
 
 
-
-
-	public void handleSignup() {
+	/*
+	 * Method to handle the sign up page
+	 */
+  public void handleSignup() {
 		if(userField.getText().trim().isEmpty() || pwdField.getText().trim().isEmpty() 
 				|| emailField.getText().trim().isEmpty()) {
 
-			System.out.println("Please fill in all the field;");
 			showAlert(Alert.AlertType.ERROR,"Forms Errro!","Fill in all the fields");
 
 		}else {	
@@ -90,10 +90,12 @@ public class NewUserController implements Initializable {
 
 
 
-
+	/*
+	 * New user into the database and it validation
+	 */
 
 	public void signUp(String username,String email,String password,String telephone,String gender) {
-		String sql = "INSERT INTO users(username,email,password,telephone,gender,accounType) VALUE(?,?,?,?,?,?)";
+		String sql = "INSERT INTO users(username,email,password,telephone,gender,accountType) VALUE(?,?,?,?,?,?)";
 
 		DButil connect = new DButil();
 		Connection connection = connect.getConnection();
@@ -107,10 +109,11 @@ public class NewUserController implements Initializable {
 			if(resultSet.next()) {
 				System.out.println("User Already Exist!");
 				Alert alert=new Alert(Alert.AlertType.ERROR);
-				alert.setContentText("Entered username has been taken already");
+				alert.setHeaderText("Fomrs Error!");
+				alert.setContentText("User with this email Already exist");
 				alert.show();
 			}
-			else {                                            //username not in existence
+			else {                                            
 				preparedStatement=connection.prepareStatement(sql);
 				preparedStatement.setString(1, username);
 				preparedStatement.setString(2, email);
@@ -120,12 +123,11 @@ public class NewUserController implements Initializable {
 				preparedStatement.setString(6, "user");
 				int ret =preparedStatement.executeUpdate();
 				if(ret > 0) {
-					infoBox("YOu have registered succesfully","Register","Register");
+					infoBox("Registered Successfully!","Registration!","Forms Registration");
 					moveToLogin();
 				}else {
 					showAlert(Alert.AlertType.ERROR,"ERROR MESSAGE","An error occured");
 				}
-
 
 			}
 
@@ -137,10 +139,13 @@ public class NewUserController implements Initializable {
 
 
 
-
+	/*
+	 * login button in the sign up page
+	 * and it's action
+	 */
 	public void moveToLogin() {
 		try {
-			System.out.println("Signed in");
+			//System.out.println("Signed in");
 			Stage stage = (Stage)signUpBtn.getScene().getWindow() ;
 			stage.close();
 			FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("Login.fxml"));
@@ -155,28 +160,26 @@ public class NewUserController implements Initializable {
 		}
 	}
 
-	/*show alert method to display outcome of the form
-	 *when sign-in button is clicked 
+	/*
+	 * alertType of Error.
 	 */
 	private void showAlert(Alert.AlertType alertType, String title, String message) {
-		// TODO Auto-generated method stub
 		Alert alert=new Alert(alertType);
 		alert.setTitle(title);
 		alert.setHeaderText(null);
 		alert.setContentText(message);
 		alert.show();
 	}
-	/*Info to display to after the sign-in button
-	 * clicked and it outcome depends on  the results
+
+	/*
+	 *alertType of Confirmation
 	 */
 	private void infoBox(String infoMessage,String headerInfo,String title) {
-		// TODO Auto-generated method stub
 		Alert alert= new Alert(Alert.AlertType.CONFIRMATION);
 		alert.setContentText(infoMessage);
 		alert.setTitle(title);
 		alert.setHeaderText(headerInfo);
 		alert.showAndWait();
-
 	}
 }
 
