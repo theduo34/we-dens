@@ -24,7 +24,7 @@ If you have ideas for new features or improvements, please open a new issue for 
 
 ## Code of Conduct
 
-All contributors are expected to adhere to the [Code of Conduct](../CODE_OF_CONDUCT.md). Please ensure that all interactions and contributions are respectful and constructive.
+All contributors are expected to adhere to the [Code of Conduct](./CODE_OF_CONDUCT.md). Please ensure that all interactions and contributions are respectful and constructive.
 
 ## Attribution
 
