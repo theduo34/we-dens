@@ -38,9 +38,10 @@ Feel free to contribute to the project by submitting issues, feature requests, o
 
 
 ## Contact
-For any inquiries or feedback, please contact me at contact@emmsom506@gmail.com.
+For any inquiries or feedback, please contact me at contact@wedens@gmail.com.
 
-See the [Contributing Guidelines](/CONTRIBUTING.md) for how to contribute to the project.
+See the [Contributing Guidelines](./CONTRIBUTING.md) for how to contribute to the project.
+>>>>>>> 73403725e6682448311bc3289c1aa98a8d2c468e
 
 Thank you for choosing We'dens for your dental health needs!
 
