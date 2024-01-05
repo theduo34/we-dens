@@ -1,5 +1,4 @@
 
-```markdown
 # We'dens Dental Health Application
 We'dens is a comprehensive dental health application designed to provide a convenient and easy way for clients to search for the nearest dental centers and book appointments with dentists. Additionally, the app offers valuable guidelines to ensure better dental health.
 
@@ -45,4 +44,3 @@ See the [Contributing Guidelines](/we-dens/CONTRIBUTING.md) for how to contribut
 
 Thank you for choosing We'dens for your dental health needs!
 
-```
