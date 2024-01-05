@@ -30,8 +30,8 @@ The project is under active development, with new features being added regularly
 - The project contains the necessary Java source files and resources organized in a directory structure for easy navigation.
 
 ## Screenshots
-![Login Page](/src/resource/Saved%20Photos/login-screenshot.png)
-![Registration Page](/src/resource/Saved%20Photos/signUp-screenshot.png)
+![Login Page](./src/resource/Saved%20Photos/login-screenshot.png)
+![Registration Page](./src/resource/Saved%20Photos/registration-screenshot.png)
 
 ## Contribution
 Feel free to contribute to the project by submitting issues, feature requests, or pull requests. Your contributions to improving dental health are greatly appreciated.
